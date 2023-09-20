@@ -102,6 +102,7 @@ main {
 .about-section {
 
     background-color: #ece9e1;
+    padding-bottom: 40px;
     
     img {
         width: 100%;
@@ -123,7 +124,7 @@ main {
     div {
         padding: 20px 0px;
         background-color: rgb(251, 208, 129);
-        margin: 40px auto;
+        margin-top: 40px;
         border-radius: 2px;
     }
 
@@ -150,7 +151,7 @@ main {
 // van section
 
 .vans-page {
-    background-color: rgb(226, 209, 186);
+    background-color: #e2d1ba;
     
     > div {
         width: 90%;
@@ -209,8 +210,8 @@ main {
 .thumb-van {
 
     margin: 20px 0px;
-
-    border: 2px solid red;
+    text-decoration: none;
+    color: black;
 
     img {
         width: 100%;
@@ -218,18 +219,87 @@ main {
 
     > div {
         display: flex;
+        justify-content: space-between;
     }
 
-    h4 {
+    .thumb-discount {
+        color: gray;
+        font-size: 14px;
+        text-decoration: line-through;
+    }
+
+    .thumb-van-tag {
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
+        margin-top: 7px;
+    }
+
+}
+
+// estilos van-template
+
+.van-template {
+
+    background-color: #e2d1ba;
+
+    > div {
+        width: 90%;
+        margin: auto;
+        padding: 35px 0px;
+    }
+
+    .back-button {
+        color: gray;
+        font-weight: bolder;
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .van-tag {
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
+        margin-top: 7px;
+        width: 17%;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: bolder;
+        margin: 10px 0px;
+    }
+
+    p {
+        margin: 10px 0px;
+    }
+
+    .price {
+        font-weight: bolder;
+    }
+
+    .type-location {
+        font-size: 14px;
+        font-weight: bolder;
+        color: gray;
+    }
+
+    .reserve-button {
+        background-color: orangered;
+        color: white;
+        font-weight: bolder;
+        border: none;
+        width: 100%;
+        padding: 10px 0px;
+        border-radius: 5px;
+        margin-top: 30px;
+        text-decoration: none;
         display: block;
-    }
-
-    .thumb-title, .thumb-van-tag {
-        float: left;
-    }
-
-    .thumb-price, .thumb-discount {
-        float: right;
+        text-align: center;
     }
 
 }

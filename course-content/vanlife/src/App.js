@@ -5,6 +5,7 @@ import "./components/styles.scss"
 import Home from "./components/Home";
 import About from "./components/About";
 import Vans from "./components/Vans";
+import VanTemplate from "./components/VanTemplate";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/vans" element={<Vans />}/>
+          <Route path="/van-template" element={<VanTemplate />} />
         </Routes>
 
         <footer>©2020 #VANLIFE</footer>
