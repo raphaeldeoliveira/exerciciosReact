@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    width: 500px;
+}
+
+header {
+    background-color: rgb(226, 209, 186);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > * {
+    display: block;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+nav > div > * {
+    margin: 0px 20px;
+    color: gray;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav > div > *:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background-color: #252525;
+    color: gray;
+    padding: 20px 0px;
+}
+
+// Estilizando as paginas das rotas
+
+// Home
+
+main {
+
+    .filtro > div {
+        width: 90%;
+        margin: auto;
+    }
+
+    position: relative;
+    background-image: url('../assets/montanha.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 300px;
+    
+    .filtro {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    .filtro > div > h1 {
+        padding-top: 50px
+    }
+
+    .filtro > div > p {
+        margin: 20px 0px;
+    }
+
+    .link-vans {
+        background-color: orangered;
+        color: white;
+        font-weight: bolder;
+        border: none;
+        width: 100%;
+        padding: 10px 0px;
+        border-radius: 5px;
+        margin: 50px 0px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+    }
+}
+
+// About
+
+.about-section {
+
+    background-color: #ece9e1;
+    
+    img {
+        width: 100%;
+    }
+
+    > * {
+        width: 90%;
+        margin: auto;
+    }
+
+    h2 {
+        padding-top: 14px;
+    }
+
+    p {
+        padding-top: 14px;
+    }
+
+    div {
+        padding: 20px 0px;
+        background-color: rgb(251, 208, 129);
+        margin: 40px auto;
+        border-radius: 2px;
+    }
+
+    div > h3 {
+        width: 60%;
+        margin-left: 16px;
+    }
+
+    .link-vans {
+        display: block;
+        margin-top: 15px;
+        margin-left: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        padding: 12px 0px;
+        text-decoration: none;
+        width: 35%;
+        text-align: center;
+    }
+}
