@@ -1,0 +1,7 @@
+Abaixo seguem dados que precisamos colocar em um banco de dados para a API receber um GETALL para retornar todas as vans disponiveis e mostrar no list. Posteriormente podemos aumentar o BD e fazer um esquema de paginas (mostrar 10 vans por pagina). Mas por agora focamos no GET GERAL com 10 vans e carregar todas.
+
+Foi criado um BD no postgres 'vans' com uma table 'vanslist'. Nessa tabela foram inseridos 10 linhas com: vanname, vanprice, typelocation, vancategory e imageurl
+
+A API deve acessar esses dados, pegar e devolver pro front  (~~JPA, Hibernate)
+
+* quando o <Link> para a <Route> '/vans' for clicado, o onClick={} sera acessado e fará a chamada pra minha API pra carregar os dados e lista-los
