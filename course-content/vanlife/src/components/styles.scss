@@ -146,3 +146,90 @@ main {
         text-align: center;
     }
 }
+
+// van section
+
+.vans-page {
+    background-color: rgb(226, 209, 186);
+    
+    > div {
+        width: 90%;
+        margin: auto;
+
+        h2 {
+            padding: 14px 0px;
+        }
+    }
+
+    // tira o estilo padrao do <button>
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        font: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    nav > * {
+        //padding: 4px 15px;
+        background-color: rgb(159, 139, 112);
+        color: rgb(85, 77, 77);
+        display: block;
+        padding: 5px 15px;
+        border-radius: 10px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .clean-button {
+        text-decoration: underline;
+        color: rgb(85, 77, 77);
+        background-color: rgb(226, 209, 186);
+        font-weight: bolder;
+        width: 25%;
+    }
+
+    .vans-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+}
+
+// thumb da van
+
+.thumb-van {
+
+    margin: 20px 0px;
+
+    border: 2px solid red;
+
+    img {
+        width: 100%;
+    }
+
+    > div {
+        display: flex;
+    }
+
+    h4 {
+        display: block;
+    }
+
+    .thumb-title, .thumb-van-tag {
+        float: left;
+    }
+
+    .thumb-price, .thumb-discount {
+        float: right;
+    }
+
+}
