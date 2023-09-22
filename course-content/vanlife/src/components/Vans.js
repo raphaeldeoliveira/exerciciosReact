@@ -11,7 +11,35 @@ import vanSix from "../assets/van-images/van6.jpg"
 
 export default function Vans() {
 
-    
+    const [vansData, setVansData] = React.useState(null)
+
+    React.useEffect(() => {
+        fetch("http://localhost:8080/")
+        .then((response) => response.json())
+        .then((data) => {
+            setVansData(data);
+        })
+    }, [])
+
+    function loadVans() {
+        // verifica se o numero de vans é impar. Se for o ultimo 
+        // nao aparecerá na lista
+        if (vansData.length % 2 == 1) {
+            // deleta o ultimo elemento do array de vans (na lista deve ser par)
+        }
+        return () => {
+            for (let i=0; i<vansData.length; i++) {
+                <VanThumb 
+                    vanImage={vansData[i].vanImage}
+                    vanTitle={vansData[i].vanTitle}
+                    vanPrice={vansData[i].vanPrice}
+                    tagColor={vansData[i].vanColor}
+                    vanTag={vansData[i].vanTag}
+                    vanDiscount={vansData[i].vanDiscount}
+                />
+            }
+        }
+    }
     
     return (
         <div className="vans-page">
@@ -24,7 +52,8 @@ export default function Vans() {
                     <button className="clean-button">Clean filters</button>
                 </nav>
                 <div className="vans-list">
-                    <VanThumb 
+                    {loadVans()}
+                    {/*<VanThumb 
                         vanImage={vanOne}
                         vanTitle="Murder Explorer"
                         vanPrice="$90"
@@ -65,7 +94,7 @@ export default function Vans() {
                         vanPrice="$90"
                         tagColor="#0b4e3e"
                         vanTag="Reggae"
-                        vanDiscount="$20"/>
+                        vanDiscount="$20"/>*/}
                 </div>
             </div>
         </div>

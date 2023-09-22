@@ -9,16 +9,6 @@ import VanTemplate from "./components/VanTemplate";
 
 function App() {
 
-  const [apiData, setApiData] = React.useState(null)
-
-  React.useEffect(() => {
-    fetch("http://localhost:8080/")
-      .then((response) => response.json())
-      .then((data) => {
-         setApiData(data);
-      })
-  }, [])
-
   return (
     <div className="App">
       <BrowserRouter>
