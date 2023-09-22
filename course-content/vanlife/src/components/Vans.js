@@ -11,7 +11,8 @@ import vanSix from "../assets/van-images/van6.jpg"
 
 export default function Vans() {
 
-
+    
+    
     return (
         <div className="vans-page">
             <div >
