@@ -5,7 +5,7 @@ export default function VanThumb(props) {
 
     return (
 
-        <Link to="/van-template" className="thumb-van">
+        <Link to={`/vans/${props.vanId}`} className="thumb-van">
             <img src={props.vanImage}/>
             <div>
                 <h4 className="thumb-title">{props.vanTitle}</h4>

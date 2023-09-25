@@ -13,6 +13,16 @@ export default function Vans() {
 
     const [vansData, setVansData] = React.useState(null)
 
+    /*
+        Como os dados vão vir:
+        * id: 1,
+        * name: "Modest Explorer",
+        * price: 60,
+        * description: lorem ipsum color durem..., 
+        * imageUrl: "",
+        * type: "simple"
+    */
+
     React.useEffect(() => {
         fetch("http://localhost:8080/")
         .then((response) => response.json())
@@ -21,7 +31,20 @@ export default function Vans() {
         })
     }, [])
 
-    function loadVans() {
+    const vansElements = vansData.map(van => (
+        <VanThumb 
+            vanId={van.vanId}
+            vanImage={van.vanImage}
+            vanTitle={van.vanTitle}
+            vanPrice={van.vanPrice}
+            tagColor={van.vanColor}
+            vanTag={van.vanTag}
+            vanDiscount={van.vanDiscount}
+        />
+    ))
+
+    // FOI SUBSTITUIDA PELA DE CIMA
+    /*function loadVans() {
         // verifica se o numero de vans é impar. Se for o ultimo 
         // nao aparecerá na lista
         if (vansData.length % 2 == 1) {
@@ -39,7 +62,7 @@ export default function Vans() {
                 />
             }
         }
-    }
+    }*/
     
     return (
         <div className="vans-page">
@@ -52,7 +75,7 @@ export default function Vans() {
                     <button className="clean-button">Clean filters</button>
                 </nav>
                 <div className="vans-list">
-                    {loadVans()}
+                    {vansElements}
                     {/*<VanThumb 
                         vanImage={vanOne}
                         vanTitle="Murder Explorer"
