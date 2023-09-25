@@ -6,8 +6,9 @@ import vanImageExample from "../assets/van-images/van1.jpg"
 export default function VanTemplate(props) {
 
     // testar se o parametro do Route esta chegando corretamente
-    const params = useParams()
-    alert(params)
+    const paramsteste = useParams()
+    alert(paramsteste)
+
 
     return (
         <div className="van-template">
