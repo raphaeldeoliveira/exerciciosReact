@@ -14,7 +14,7 @@ export default function Vans() {
     const [vansData, setVansData] = React.useState(null)
 
     React.useEffect(() => {
-        fetch("http://localhost:8080/")
+        fetch("http://localhost:8080/vans")
         .then((response) => response.json())
         .then((data) => {
             setVansData(data);
@@ -22,24 +22,23 @@ export default function Vans() {
     }, [])
 
     function loadVans() {
-        // verifica se o numero de vans é impar. Se for o ultimo 
-        // nao aparecerá na lista
-        if (vansData.length % 2 == 1) {
-            // deleta o ultimo elemento do array de vans (na lista deve ser par)
+        if (vansData && vansData.length % 2 === 1) {
+            vansData.pop(); // Remove o último elemento do array de vans se for ímpar
         }
-        return () => {
-            for (let i=0; i<vansData.length; i++) {
-                <VanThumb 
-                    vanImage={vansData[i].vanImage}
-                    vanTitle={vansData[i].vanTitle}
-                    vanPrice={vansData[i].vanPrice}
-                    tagColor={vansData[i].vanColor}
-                    vanTag={vansData[i].vanTag}
-                    vanDiscount={vansData[i].vanDiscount}
-                />
-            }
-        }
+        return vansData ? vansData.map((van, index) => (
+            <VanThumb 
+                key={index}
+                vanImage={van.urlImage}
+                vanTitle={van.vanName}
+                vanPrice={van.vanPrice}
+                //tagColor={van.vanColor}
+                vanTag={van.vanCategory}
+                vanDiscount={van.typeLocation}
+            />
+        )) : null;
     }
+    
+    
     
     return (
         <div className="vans-page">

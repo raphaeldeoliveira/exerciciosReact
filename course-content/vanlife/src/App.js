@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="/vans" element={<Vans apiData={apiData}/>}/>
+          <Route path="/vans" element={<Vans /*apiData={apiData}*//>}/>
           <Route path="/van-template" element={<VanTemplate />} />
         </Routes>
 
