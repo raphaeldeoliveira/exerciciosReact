@@ -13,6 +13,16 @@ export default function Vans() {
 
     const [vansData, setVansData] = React.useState(null)
 
+    /*
+        Como os dados vão vir:
+        * id: 1,
+        * name: "Modest Explorer",
+        * price: 60,
+        * description: lorem ipsum color durem..., 
+        * imageUrl: "",
+        * type: "simple"
+    */
+
     React.useEffect(() => {
         fetch("http://localhost:8080/vans")
         .then((response) => response.json())
@@ -37,8 +47,6 @@ export default function Vans() {
             />
         )) : null;
     }
-    
-    
     
     return (
         <div className="vans-page">
