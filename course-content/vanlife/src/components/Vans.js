@@ -12,6 +12,7 @@ import vanSix from "../assets/van-images/van6.jpg"
 export default function Vans() {
 
     const [vansData, setVansData] = React.useState(null)
+    const [activeFilter, setActiveFilter] = React.useState(null)
 
     /*
         Como os dados vão vir:
@@ -22,6 +23,33 @@ export default function Vans() {
         * imageUrl: "",
         * type: "simple"
     */
+
+    function getGeral() {
+        fetch("http://localhost:8080/vans")
+        .then((response) => response.json())
+        .then((data) => {
+            setVansData(data);
+        })
+        loadVans()
+        setActiveFilter(null)
+    }
+
+    function getFiltro(filtro) {
+        fetch(`http://localhost:8080/vans/filter?filter=${filtro}`)
+        .then((response) => response.json())
+        .then((data) => {
+            setVansData(data);
+        })
+        loadVans()
+        switch (filtro) {
+            case "Explore": setActiveFilter(0);
+            break;
+            case "Lauring": setActiveFilter(1);
+            break;
+            case "Reggae": setActiveFilter(2);
+            break;
+        }
+    }
 
     React.useEffect(() => {
         fetch("http://localhost:8080/vans")
@@ -35,13 +63,23 @@ export default function Vans() {
         if (vansData && vansData.length % 2 === 1) {
             vansData.pop(); // Remove o último elemento do array de vans se for ímpar
         }
+
+        function setTagColor(van) {
+            switch (van.vanCategory) {
+                case "Explore": return "black";
+                case "Lauring": return "#2E933C";
+                case "Reggae": return "#963484";
+            }
+        }
+
         return vansData ? vansData.map((van, index) => (
             <VanThumb 
                 key={index}
+                vanId={van.id}
                 vanImage={van.urlImage}
                 vanTitle={van.vanName}
                 vanPrice={van.vanPrice}
-                //tagColor={van.vanColor}
+                tagColor={setTagColor(van)}
                 vanTag={van.vanCategory}
                 vanDiscount={van.typeLocation}
             />
@@ -53,10 +91,35 @@ export default function Vans() {
             <div >
                 <h2>Explore our vans options</h2>
                 <nav>
-                    <button>Explore</button>
-                    <button>Lauring</button>
-                    <button>Reggae</button>
-                    <button className="clean-button">Clean filters</button>
+                    <button 
+                        style={{ 
+                            backgroundColor: activeFilter === 0 ? "black" : "",
+                            color: activeFilter === 0 ? "white" : ""
+                        }}
+                        onClick={() => getFiltro("Explore")}
+                        >Explore
+                    </button>
+                    <button 
+                        style={{ 
+                            backgroundColor: activeFilter === 1 ? "#2E933C" : "",
+                            color: activeFilter === 1 ? "white" : ""
+                        }}
+                        onClick={() => getFiltro("Lauring")}
+                        >Lauring
+                    </button>
+                    <button 
+                        style={{ 
+                            backgroundColor: activeFilter === 2 ? "#963484" : "",
+                            color: activeFilter === 2 ? "white" : ""
+                        }}
+                        onClick={() => getFiltro("Reggae")}
+                        >Reggae
+                    </button>
+                    <button 
+                        onClick={() => getGeral()} 
+                        className="clean-button"
+                        >Clean filters
+                    </button>
                 </nav>
                 <div className="vans-list">
                     {loadVans()}

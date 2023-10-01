@@ -3,28 +3,49 @@ import { useParams, Link } from "react-router-dom"
 
 import vanImageExample from "../assets/van-images/van1.jpg"
 
-export default function VanTemplate(props) {
+export default function VanTemplate() {
 
-    // testar se o parametro do Route esta chegando corretamente
-    const paramsteste = useParams()
-    alert(paramsteste)
+    const [vanData, setVanData] = React.useState()
 
+    // Obtém o parâmetro de ID da URL
+    const { id } = useParams();
+
+    // Faz a chamada a API para carregar os dados
+    React.useEffect(() => {
+        fetch(`http://localhost:8080/vans/${id}`)
+        .then(response => response.json())
+        .then(data => { setVanData(data) })
+    }, [id])
+
+    function setCategoryColor(category) {
+        switch (category) {
+            case "Explore": return "black";
+            case "Lauring": return "#2E933C";
+            case "Reggae": return "#963484";
+        }
+    }
+
+    if (!vanData) {
+        return <div>Carregando...</div>;
+    }
 
     return (
         <div className="van-template">
-            <h4 className="back-button">&larr; Back to vans list</h4>
-            <img src={props.vanImage}/>
-            <h4 
-                className="van-tag"
-                style={{ backgroundColor: props.tagColor }}  
-            >{props.vanTag}</h4>
-            <h2>{props.vanTitle}</h2>
-            <h3>
-                <span className="price">{props.vanPrice}</span>
-                <span className="type-location">{props.locationPeriod}</span>
-            </h3>
-            <p>{props.vanParagraph}</p>
-            <Link className="reserve-button" to="/">Reserve this van!</Link>
+            <div>
+                <Link to="/vans" className="back-button">&larr; Back to vans list</Link>
+                <img src={vanData.urlImage}/>
+                <h4 
+                    className="van-tag"
+                    style={{ backgroundColor: setCategoryColor() }}  
+                >{vanData.vanCategory}</h4>
+                <h2>{vanData.vanName}</h2>
+                <h3>
+                    <span className="price">{vanData.vanPrice}</span>
+                    <span className="type-location">{vanData.typeLocation}</span>
+                </h3>
+                <p>{vanData.vanParagraph}</p>
+                <Link className="reserve-button" to="/">Reserve this van!</Link>
+            </div>
         </div>
 
         /*<div className="van-template">

@@ -25,8 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
-          <Route path="/vans" element={<Vans /*apiData={apiData}*//>}/>
-          <Route path="/van-template" element={<VanTemplate />} />
+          <Route path="/vans" element={<Vans />}/>
+          <Route path="/vans/:id" element={<VanTemplate />}/>
+          {/*<Route path="/van-template" element={<VanTemplate />} />*/}
         </Routes>
 
         <footer>©2020 #VANLIFE</footer>

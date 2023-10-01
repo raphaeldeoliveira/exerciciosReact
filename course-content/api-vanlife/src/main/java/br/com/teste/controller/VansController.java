@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.teste.model.Van;
@@ -30,6 +31,11 @@ public class VansController {
 	@GetMapping(value = "/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Van findOne(@PathVariable(value = "id") Long id) throws Exception {
 		return service.findById(id);
+	}
+	
+	@GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Van> findByFilter(@RequestParam(value = "filter") String filter) {
+	    return service.findByFilter(filter);
 	}
 	
 	/* Métodos desabilitados pois o objetivo da API é fornecer os dados

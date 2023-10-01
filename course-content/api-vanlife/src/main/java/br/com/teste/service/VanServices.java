@@ -1,5 +1,6 @@
 package br.com.teste.service;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
@@ -29,6 +30,15 @@ public class VanServices {
 		
 		return repository.findById(id)
 				.orElseThrow(() -> new NoSuchElementException("Mensagem de erro aqui"));
+	}
+	
+	public List<Van> findByFilter(String filter) {
+	    logger.info("Finding vans with filtering");
+
+	    List<Van> allVans = repository.findAll();
+	    allVans.removeIf(van -> !van.getVanCategory().equals(filter));
+
+	    return allVans;
 	}
 	
 	public Van create(Van van) {

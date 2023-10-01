@@ -13,6 +13,11 @@ header {
     background-color: rgb(226, 209, 186);
 }
 
+header:hover {
+    background-color: white;
+    transition: background-color 500ms ease;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -172,6 +177,12 @@ main {
         padding: 0;
     }
 
+    button:hover {
+        color: black;
+        background-color: rgb(112, 97, 79);
+        transition: color 500ms ease, background-color 500ms ease;
+    }
+
     nav {
         display: flex;
         justify-content: space-evenly;
@@ -194,6 +205,10 @@ main {
         background-color: rgb(226, 209, 186);
         font-weight: bolder;
         width: 25%;
+    }
+
+    .clean-button:hover {
+        background-color: transparent;
     }
 
     .vans-list {

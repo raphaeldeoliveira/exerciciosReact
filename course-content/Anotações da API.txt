@@ -5,3 +5,7 @@ Foi criado um BD no postgres 'vans' com uma table 'vanslist'. Nessa tabela foram
 A API deve acessar esses dados, pegar e devolver pro front  (~~JPA, Hibernate)
 
 * quando o <Link> para a <Route> '/vans' for clicado, o onClick={} sera acessado e fará a chamada pra minha API pra carregar os dados e lista-los
+
+adicionar a coluna description na tabela de vans
+* criar a logica de dias do ano que esta disponivel
+* criar a coluna de status (disponivel ou indisponivel)
