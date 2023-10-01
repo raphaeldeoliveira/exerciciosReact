@@ -26,14 +26,17 @@ public class Van implements Serializable {
 	@Column(name = "vanprice", nullable = false)
 	private float vanPrice;
 	
-	@Column(name = "typelocation", nullable = false, length = 20)
+	@Column(name = "typelocation", length = 20)
 	private String typeLocation;
 	
-	@Column(name = "vancategory", nullable = false, length = 20)
+	@Column(name = "vancategory", length = 20)
 	private String vanCategory;
 	
 	@Column(name = "imageurl", nullable = false, length = 255)
 	private String urlImage;
+	
+	@Column(name = "description", nullable = false, length = 500)
+	private String description;
 	
 	public Van() {
 		
@@ -87,9 +90,17 @@ public class Van implements Serializable {
 		this.urlImage = urlImage;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, typeLocation, urlImage, vanCategory, vanName, vanPrice);
+		return Objects.hash(description, id, typeLocation, urlImage, vanCategory, vanName, vanPrice);
 	}
 
 	@Override
@@ -101,10 +112,10 @@ public class Van implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Van other = (Van) obj;
-		return Objects.equals(id, other.id) && Objects.equals(typeLocation, other.typeLocation)
-				&& Objects.equals(urlImage, other.urlImage) && Objects.equals(vanCategory, other.vanCategory)
-				&& Objects.equals(vanName, other.vanName)
+		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
+				&& Objects.equals(typeLocation, other.typeLocation) && Objects.equals(urlImage, other.urlImage)
+				&& Objects.equals(vanCategory, other.vanCategory) && Objects.equals(vanName, other.vanName)
 				&& Float.floatToIntBits(vanPrice) == Float.floatToIntBits(other.vanPrice);
 	}
-	
+
 }

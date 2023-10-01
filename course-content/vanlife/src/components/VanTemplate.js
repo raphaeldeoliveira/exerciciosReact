@@ -36,14 +36,14 @@ export default function VanTemplate() {
                 <img src={vanData.urlImage}/>
                 <h4 
                     className="van-tag"
-                    style={{ backgroundColor: setCategoryColor() }}  
+                    style={{ backgroundColor: setCategoryColor(vanData.vanCategory) }}  
                 >{vanData.vanCategory}</h4>
                 <h2>{vanData.vanName}</h2>
                 <h3>
                     <span className="price">{vanData.vanPrice}</span>
                     <span className="type-location">{vanData.typeLocation}</span>
                 </h3>
-                <p>{vanData.vanParagraph}</p>
+                <p>{vanData.description}</p>
                 <Link className="reserve-button" to="/">Reserve this van!</Link>
             </div>
         </div>

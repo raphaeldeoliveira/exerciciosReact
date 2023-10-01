@@ -7,6 +7,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +38,11 @@ public class VansController {
 	@GetMapping(value = "/filter", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Van> findByFilter(@RequestParam(value = "filter") String filter) {
 	    return service.findByFilter(filter);
+	}
+	
+	@PutMapping(consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	public Van update(@RequestBody Van van) {
+		return service.update(van);
 	}
 	
 	/* Métodos desabilitados pois o objetivo da API é fornecer os dados
