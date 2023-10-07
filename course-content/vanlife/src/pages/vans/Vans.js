@@ -2,12 +2,12 @@ import React from "react"
 import VanThumb from "./VanThumb"
 
 // importe das imagens
-import vanOne from "../assets/van-images/van1.jpg"
-import vanTwo from "../assets/van-images/van2.jpg"
-import vanThree from "../assets/van-images/van3.jpg"
-import vanFour from "../assets/van-images/van4.jpg"
-import vanFive from "../assets/van-images/van5.jpg"
-import vanSix from "../assets/van-images/van6.jpg"
+import vanOne from "../../assets/van-images/van1.jpg"
+import vanTwo from "../../assets/van-images/van2.jpg"
+import vanThree from "../../assets/van-images/van3.jpg"
+import vanFour from "../../assets/van-images/van4.jpg"
+import vanFive from "../../assets/van-images/van5.jpg"
+import vanSix from "../../assets/van-images/van6.jpg"
 
 export default function Vans() {
 

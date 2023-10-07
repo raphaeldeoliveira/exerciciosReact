@@ -240,7 +240,6 @@ main {
     .thumb-discount {
         color: gray;
         font-size: 14px;
-        text-decoration: line-through;
     }
 
     .thumb-van-tag {
@@ -315,6 +314,33 @@ main {
         text-decoration: none;
         display: block;
         text-align: center;
+    }
+
+}
+
+.host {
+
+    .colorful-section {
+
+        margin: auto;
+        width: 90%;
+
+        .light-yellow {
+            display: flex;
+            background-color: rgb(221, 221, 96);
+        }
+    
+        .dark-yellow {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(225, 225, 28);
+        }
+    
+        .dark-yellow > * {
+            display: flex;
+            padding: 20px 20px;
+        }
+
     }
 
 }

@@ -1,16 +1,19 @@
 import React from "react"
 import { useParams, Link } from "react-router-dom"
 
-import vanImageExample from "../assets/van-images/van1.jpg"
+import vanImageExample from "../../assets/van-images/van1.jpg"
 
 export default function VanTemplate() {
 
     const [vanData, setVanData] = React.useState()
 
     // Obtém o parâmetro de ID da URL
+    // ele tem que ficar entre {} porque o useParams vai retornar um
+    // objeto com a key id.
     const { id } = useParams();
 
     // Faz a chamada a API para carregar os dados
+    // quando o id mudar ele da outro get na API
     React.useEffect(() => {
         fetch(`http://localhost:8080/vans/${id}`)
         .then(response => response.json())
@@ -25,6 +28,7 @@ export default function VanTemplate() {
         }
     }
 
+    // se os dados da API nao foram carregados, aparece isso
     if (!vanData) {
         return <div>Carregando...</div>;
     }
@@ -40,8 +44,8 @@ export default function VanTemplate() {
                 >{vanData.vanCategory}</h4>
                 <h2>{vanData.vanName}</h2>
                 <h3>
-                    <span className="price">{vanData.vanPrice}</span>
-                    <span className="type-location">{vanData.typeLocation}</span>
+                    <span className="price">${vanData.vanPrice}</span>
+                    <span className="type-location">/{vanData.typeLocation}</span>
                 </h3>
                 <p>{vanData.description}</p>
                 <Link className="reserve-button" to="/">Reserve this van!</Link>
