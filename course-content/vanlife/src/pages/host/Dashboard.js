@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 export default function Dashboard() {
 
@@ -29,7 +29,13 @@ export default function Dashboard() {
     })
 
     return (
-        <div className="host">
+
+        <>
+            <h1>Dashboard goes here</h1>
+            {/*<Outlet />*/}
+        </>
+
+        /*<div className="host">
             <nav>
                 <Link to="" >Dashboard</Link>
                 <Link to="" >Income</Link>
@@ -61,11 +67,11 @@ export default function Dashboard() {
                     <h5>View all</h5>
                 </div>
                 <div>
-                    {/*{loadComponents}*/}
+                    {loadComponents}
                     <Card />
                 </div>
             </div>
-        </div>
+        </div>*/
     )
 
 }
