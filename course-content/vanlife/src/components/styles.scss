@@ -11,38 +11,43 @@ body {
 
 header {
     background-color: rgb(226, 209, 186);
+
+    .activeLink {
+        color: black;
+        text-decoration: underline;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    nav > * {
+        display: block;
+        padding: 20px 50px;
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+        font-size: 24px;
+    }
+    
+    nav > div > * {
+        margin: 0px 20px;
+        color: gray;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 16px;
+    }
+    
+    nav > div > *:hover {
+        color: black;
+        text-decoration: underline;
+    }
 }
 
 header:hover {
     background-color: white;
     transition: background-color 500ms ease;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-}
-
-nav > * {
-    display: block;
-    padding: 20px 50px;
-    text-decoration: none;
-    color: black;
-    font-weight: bolder;
-    font-size: 24px;
-}
-
-nav > div > * {
-    margin: 0px 20px;
-    color: gray;
-    font-weight: normal;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-nav > div > *:hover {
-    color: black;
-    text-decoration: underline;
 }
 
 footer {
@@ -343,4 +348,24 @@ main {
 
     }
 
+}
+
+.navbar-hostLayout {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar-hostLayout > * {
+    text-decoration: none;
+    color: black;
+    padding: 20px 0px;
+}
+
+.navbar-hostLayout > *:hover {
+    font-weight: bold;
+}
+
+.active-hostLayout {
+    font-weight: bold;
 }

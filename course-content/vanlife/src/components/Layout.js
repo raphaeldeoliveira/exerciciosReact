@@ -7,7 +7,8 @@ export default function Layout() {
     return (
         <>
             <Header />
-            <Outlet />
+                <Outlet />
+            <footer>©2022 #VANLIFE</footer>
         </>
         
     )
