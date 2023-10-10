@@ -7,10 +7,15 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     width: 500px;
+    
+
+    > * {
+        background-color: #fdf5ea;
+    }
 }
 
 header {
-    background-color: rgb(226, 209, 186);
+    background-color: #fdf5ea;
 
     .activeLink {
         color: black;
@@ -332,18 +337,109 @@ main {
 
         .light-yellow {
             display: flex;
-            background-color: rgb(221, 221, 96);
+            justify-content: space-between;
+            background-color: #fde7c6;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+
+            align-items: center;
+
+            .day-type {
+                color: rgb(92, 92, 92);
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            > div > h5 {
+                color: gray;
+                margin: -7px 0px;
+            }
+        }
+
+        .light-yellow > div {
+            margin: 0px 15px;
+        }
+
+        .light-yellow > div > * {
+            margin: 15px 0px;
         }
     
         .dark-yellow {
             display: flex;
             justify-content: space-between;
-            background-color: rgb(225, 225, 28);
+            align-items: center;
+            background-color: #fdd8a7;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+
+            .star {
+                color: orangered;
+                padding-left: 10px;
+            }
+
+            .rating-of {
+                color: gray;
+                font-weight: bold;
+            }
+
         }
     
         .dark-yellow > * {
             display: flex;
             padding: 20px 20px;
+        }
+
+    }
+
+    .listed-vans {
+
+        .subtitles {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 40px;
+        }
+
+        .listed-van {
+            //height: 200px;
+            width: 80%;
+            margin: 15px auto;
+            display: flex;
+            border-radius: 10px;
+            align-items: center;
+            background-color: white;
+            padding: 0px 5px;
+
+            img {
+                width: 20%;
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            > div {
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                margin: 0px 10px;
+                //align-items: center;
+
+                .price-by-time {
+                    color: gray;
+                }
+
+                .edit {
+                    color: rgb(91, 91, 91);
+                    font-weight: bold;
+                    padding-right: 5px;
+                    cursor: pointer;
+                }
+
+                .edit:hover {
+                    text-decoration: underline;
+                }
+
+            }
+
         }
 
     }
