@@ -9,7 +9,7 @@ export default function VansHostTemplate() {
 
     return (
         <div className="host-van-template">
-            <Link>&#x2190; <span>Back to all vans</span></Link>
+            <Link to="/host/vans">&#x2190; <span>Back to all vans</span></Link>
             <div>
                 <div className="data-van-section">
                     <img src="https://cdn.awsli.com.br/600x700/952/952032/produto/75057310/f7915f7956.jpg"/>

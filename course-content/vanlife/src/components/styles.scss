@@ -698,6 +698,24 @@ main {
     }
 }
 
+.host-vans-photos {
+    display: grid;
+    grid-template-columns: 22% 22% 22% 22%;
+    gap: 15px;
+    width: 90%;
+    margin: 20px auto;
+
+    > img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    > div {
+        width: 100%;
+        display: block;
+    }
+}
+
 .navbar-hostLayout {
     display: flex;
     align-items: center;
