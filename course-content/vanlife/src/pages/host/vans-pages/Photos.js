@@ -1,11 +1,16 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function Photos() {
 
+    const {currentVanData} = useOutletContext()
 
     return (
         <div className="host-vans-photos">
-            <img src="https://s3-media0.fl.yelpcdn.com/bphoto/W4X5vD_TGaFsL5TrJKyNNA/1000s.jpg" />
+            <img src={currentVanData.urlImage} />
+            {/* a imagem acima tem que ser substituida por uma chamada
+            de função que carrega as imagens. Mas pra isso tem que criar
+            uma tabela no banco só pras imagens */}
         </div>
     )
 }

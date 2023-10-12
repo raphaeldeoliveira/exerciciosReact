@@ -35,6 +35,7 @@ export default function Vans() {
     }
 
     function getFiltro(filtro) {
+        //setVansData(null);
         fetch(`http://localhost:8080/vans/filter?filter=${filtro}`)
         .then((response) => response.json())
         .then((data) => {
@@ -60,6 +61,7 @@ export default function Vans() {
     }, [])
 
     function loadVans() {
+
         if (vansData && vansData.length % 2 === 1) {
             vansData.pop(); // Remove o último elemento do array de vans se for ímpar
         }
@@ -84,6 +86,10 @@ export default function Vans() {
                 vanDiscount={van.typeLocation}
             />
         )) : null;
+    }
+
+    if (!vansData) {
+        return <h1>Loading ...</h1>
     }
     
     return (
