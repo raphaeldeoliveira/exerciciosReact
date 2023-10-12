@@ -35,7 +35,7 @@ export default function Dashboard() {
             *<Outlet /> // esse outlet nao foi implementado
         </>*/
 
-        <div className="host">
+        <div className="host-dashboard">
             <div className="colorful-section">
                 <div className="light-yellow">
                     <div>
